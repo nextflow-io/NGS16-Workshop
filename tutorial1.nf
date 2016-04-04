@@ -1,6 +1,6 @@
-#!/bin/bash
-
+#!/usr/bin/env nextflow
 echo true
+
 annotation = Channel.fromPath('rnaseq/refs/mm65.long.ok.gtf')
 
 process count {
@@ -13,5 +13,4 @@ process count {
   awk '$3=="transcript"' Sec23a.gff | wc -l 
   awk '$3=="exon"' Sec23a.gff | wc -l
   '''
-
 }

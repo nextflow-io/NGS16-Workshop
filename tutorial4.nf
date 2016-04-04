@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env nextflow
 
 params.gene = 'Sec23a'
 params.annot = 'rnaseq/refs/mm65.long.ok.gtf'
@@ -8,8 +8,8 @@ genes = params.gene.tokenize(', ')
 
 process count {
   input: 
-  each gene from genes
   file annot from annotation 
+  each gene from genes
  
   output:
   stdout into result
